@@ -1,5 +1,5 @@
 //
-//  StoredProfileData+CoreDataProperties.swift
+//  ProfileData+CoreDataProperties.swift
 //  MatchMate
 //
 //  Created by Singhal, Pallak on 27/09/25.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension StoredProfileData {
+extension ProfileData {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<StoredProfileData> {
-        return NSFetchRequest<StoredProfileData>(entityName: "StoredProfileData")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<ProfileData> {
+        return NSFetchRequest<ProfileData>(entityName: "ProfileData")
     }
 
     @NSManaged public var age: Int16
@@ -25,6 +25,6 @@ extension StoredProfileData {
 
 }
 
-extension StoredProfileData : Identifiable {
+extension ProfileData : Identifiable {
 
 }
