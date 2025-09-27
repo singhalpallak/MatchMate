@@ -6,8 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		127A8E672E87E31600F1B7BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127A8E662E87E31600F1B7BB /* CoreData.framework */; };
+		87EF9C5D01F484BACB29B9EB /* Pods_MatchMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 343ABEB8CB03DE06D17648F4 /* Pods_MatchMate.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		097F7C49CE1206899D832C11 /* Pods-MatchMate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.release.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.release.xcconfig"; sourceTree = "<group>"; };
+		127A8E662E87E31600F1B7BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1287E07D2E87B75400F302EB /* MatchMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		343ABEB8CB03DE06D17648F4 /* Pods_MatchMate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchMate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6697D439CEC1C88BA14C2808 /* Pods-MatchMate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchMate.debug.xcconfig"; path = "Target Support Files/Pods-MatchMate/Pods-MatchMate.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127A8E672E87E31600F1B7BB /* CoreData.framework in Frameworks */,
+				87EF9C5D01F484BACB29B9EB /* Pods_MatchMate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +58,8 @@
 			children = (
 				1287E07F2E87B75400F302EB /* MatchMate */,
 				1287E07E2E87B75400F302EB /* Products */,
+				2B6680E5DF0D2D4CDFECFF50 /* Pods */,
+				978F8AB1773B17771197FF71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +71,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2B6680E5DF0D2D4CDFECFF50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6697D439CEC1C88BA14C2808 /* Pods-MatchMate.debug.xcconfig */,
+				097F7C49CE1206899D832C11 /* Pods-MatchMate.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		978F8AB1773B17771197FF71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127A8E662E87E31600F1B7BB /* CoreData.framework */,
+				343ABEB8CB03DE06D17648F4 /* Pods_MatchMate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1287E0932E87B75600F302EB /* Build configuration list for PBXNativeTarget "MatchMate" */;
 			buildPhases = (
+				919C756F7E7D73FFDB8866C2 /* [CP] Check Pods Manifest.lock */,
 				1287E0792E87B75400F302EB /* Sources */,
 				1287E07A2E87B75400F302EB /* Frameworks */,
 				1287E07B2E87B75400F302EB /* Resources */,
+				BFD31E23959ED2D332044F35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -77,8 +110,6 @@
 				1287E07F2E87B75400F302EB /* MatchMate */,
 			);
 			name = MatchMate;
-			packageProductDependencies = (
-			);
 			productName = MatchMate;
 			productReference = 1287E07D2E87B75400F302EB /* MatchMate.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +158,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		919C756F7E7D73FFDB8866C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MatchMate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFD31E23959ED2D332044F35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MatchMate/Pods-MatchMate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1287E0792E87B75400F302EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +213,7 @@
 /* Begin XCBuildConfiguration section */
 		1287E0942E87B75600F302EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6697D439CEC1C88BA14C2808 /* Pods-MatchMate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -167,6 +241,7 @@
 		};
 		1287E0952E87B75600F302EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 097F7C49CE1206899D832C11 /* Pods-MatchMate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
