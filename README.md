@@ -17,7 +17,7 @@ Challenges Encountered
 During development, an attempt was made to use SDWebImage for asynchronous image downloading and caching. However, permission issues arose, preventing successful integration. The specific error encountered was:
 
 Error: mkpathat: Operation not permitted when building the project, linked to the SDWebImage.framework/SDWebImage.bundle/ path.
-Cause: This issue stemmed from the project being stored in a OneDrive-synced directory (/Users/singhpal/Library/CloudStorage/OneDrive-adidas/Desktop/MatchMate), where file permissions restricted access. Attempts to copy the project to a local directory (e.g., ~/Desktop/MatchMate_local) failed with errors like cp: ... Permission denied due to nested Pods directory path length limitations (name too long) and ongoing OneDrive sync interference.
+Cause: This issue stemmed from the project being stored in a OneDrive-synced directory, where file permissions restricted access. Attempts to copy the project to a local directory (e.g., ~/Desktop/MatchMate_local) failed with errors like cp: ... Permission denied due to nested Pods directory path length limitations (name too long) and ongoing OneDrive sync interference.
 Resolution: SDWebImage was removed from the Podfile, and local images (e.g., profile_image in Assets.xcassets) were used instead to bypass the permission constraints.
 
 Setup Instructions
