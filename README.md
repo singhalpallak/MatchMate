@@ -23,7 +23,6 @@ Resolution: SDWebImage was removed from the Podfile, and local images (e.g., pro
 Setup Instructions
 
 Ensure CocoaPods is installed (gem install cocoapods).
-Navigate to the project directory: /Users/singhpal/Library/CloudStorage/OneDrive-adidas/Desktop/MatchMate.
 Run pod install to set up dependencies.
 Open MatchMate.xcworkspace in Xcode.
 Build and run the project (Cmd+R).
