@@ -1,5 +1,4 @@
-#MatchMate - Matrimonial Card Interface
-
+MatchMate - Matrimonial Card Interface
 Overview
 This project, MatchMate, is a matrimonial card interface application developed for iOS. It is designed to display profile matches with details such as name, age, location, and status (pending, accepted, or declined), utilizing Core Data for persistent storage.
 Technology Stack
@@ -7,10 +6,11 @@ Technology Stack
 Language: Swift
 Framework: UIKit
 Dependency Management: CocoaPods
+Persistent Storage: Core Data
 Version: Built with Xcode 15.0 and iOS 15.0 deployment target (as specified in the Podfile).
 
 Implementation Details
-The application is implemented using the UIKit framework, providing a native iOS user interface with a table view to list profile matches. The project structure follows the MVVM (Model-View-ViewModel) architecture for better separation of concerns, with models managing data, view models handling business logic, and views displaying the UI.
+The application is implemented using the UIKit framework, providing a native iOS user interface with a table view to list profile matches. The project structure follows the MVVM (Model-View-ViewModel) architecture for better separation of concerns, with models managing data, view models handling business logic, and views displaying the UI. Core Data is used to persistently store profile information, ensuring data availability even offline, managed through a PersistenceController and the ProfileData entity.
 Dependencies are managed through CocoaPods, allowing for easy integration of libraries. The initial plan included using SDWebImage for image loading, but due to permission issues, this was replaced with local assets.
 Challenges Encountered
 During development, an attempt was made to use SDWebImage for asynchronous image downloading and caching. However, permission issues arose, preventing successful integration. The specific error encountered was:
@@ -33,6 +33,7 @@ Add support for dynamic image loading if permission issues are resolved.
 Enhance the MVVM structure with additional view models or services.
 Improve UI with custom cells or animations.
 
+Author
+
 Name: Singhal, Pallak
 Date: September 28, 2025
-
