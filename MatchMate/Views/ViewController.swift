@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         setupUI()
         bindViewModel()
         viewModel.refreshData()
+        viewModel.printStoredProfiles()
     }
 
     func setupUI() {

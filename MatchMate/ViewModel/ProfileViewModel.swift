@@ -54,4 +54,17 @@ class ProfileViewModel: NSObject {
         persistence.updateStatus(for: id, status: status)
         loadProfiles()
     }
+    
+    func printStoredProfiles() {
+        let context = PersistenceController.shared.container.viewContext
+        let fetchRequest: NSFetchRequest<ProfileData> = ProfileData.fetchRequest()
+        do {
+            let fetchedProfiles = try context.fetch(fetchRequest)
+            for profile in fetchedProfiles {
+                print("Profile - ID: \(profile.id ?? "N/A"), Name: \(profile.fullName ?? "N/A"), Age: \(profile.age), Location: \(profile.displayLocation ?? "N/A"), Status: \(profile.status ?? "N/A")")
+            }
+        } catch {
+            print("Error fetching profiles: \(error)")
+        }
+    }
 }
