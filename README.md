@@ -1,4 +1,5 @@
 MatchMate - Matrimonial Card Interface
+
 Overview
 This project, MatchMate, is a matrimonial card interface application developed for iOS. It is designed to display profile matches with details such as name, age, location, and status (pending, accepted, or declined), utilizing Core Data for persistent storage.
 Technology Stack
